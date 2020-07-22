@@ -1,5 +1,5 @@
 import Axion from 'axios';
-import Axios from 'axios';
+
 
 class ClientArea {
     constructor() {
@@ -20,7 +20,7 @@ class ClientArea {
     sendRequest() {
         Axios.post('https://affectionate-ptolemy-b94b06.netlify.app/.netlify/functions/secret-area', { password: this.field.value }).then(res => {
             this.form.remove();
-            this.contentArea.innerHTML = response.data;
+            this.contentArea.innerHTML = res.data;
         }).catch(() => {
             this.contentArea.innerHTML = `<p class="client-area__error">That secret phrase is not correct. Try again.</p>`;
             this.field.value = '';

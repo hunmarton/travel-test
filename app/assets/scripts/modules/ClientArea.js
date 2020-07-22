@@ -18,7 +18,7 @@ class ClientArea {
     }
 
     sendRequest() {
-        Axios.post('https://affectionate-ptolemy-b94b06.netlify.app/.netlify/functions/secret-area', { password: this.field.value }).then(res => {
+        Axios.post('https://affectionate-ptolemy-b94b06.netlify.app/.netlify/functions/secret-area', { password: this.field.value }).then(response => {
             this.form.remove();
             this.contentArea.innerHTML = response.data;
         }).catch(() => {
